@@ -1,0 +1,312 @@
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 800;
+  src: local("Montserrat"),
+       url(../fonts/Montserrat-ExtraBold.woff),
+       url(../fonts/Montserrat-ExtraBold.woff2);
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Montserrat"),
+       url(../fonts/Montserrat-Bold.woff),
+       url(../fonts/Montserrat-Bold.woff2);
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Montserrat"),
+       url(../fonts/Montserrat-SemiBold.woff),
+       url(../fonts/Montserrat-SemiBold.woff2);
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Montserrat"),
+       url(../fonts/Montserrat-Medium.woff),
+       url(../fonts/Montserrat-Medium.woff2);
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Montserrat"),
+       url(../fonts/Montserrat-Regular.woff),
+       url(../fonts/Montserrat-Regular.woff2);
+}
+
+
+
+* {
+
+}
+
+:root {
+  --white-color: #FFFFFF;
+  --color-text-heading: #333333;
+  --color-orange: #FF9900;
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.conteiner {
+  max-width: 1770px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+}
+
+.title {
+  color: var(--color-text-heading);
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 56px;
+}
+
+/*---HEADER---------------------------------------------*/
+
+.header {
+  background-color: var(--white-color));
+  box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.1);
+}
+
+.header-block {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.header__logo {
+  max-height: 72px;
+}
+
+.header-nav {
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header-nav-list-item {
+  display: flex;
+}
+
+.header-nav-list__item {
+  margin-right: 85px;
+}
+
+.header-nav-list-item__link {
+  color: #333333;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 600;
+}
+
+.header-search {
+}
+
+.header-burger {
+  display: none;
+}
+
+.header-button {
+  
+  box-sizing: border-box;
+}
+
+
+
+/*--HERO-----------------------------*/
+
+.hero {
+  margin-bottom: 100px;
+}
+.swiper {
+}
+.swiper--first {
+  background-image: url(../img/low-angle-photo-of-balconies-24620151.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.swiper-content {
+  max-width: 835px;
+  padding: 100px 853px 100px 80px;
+}
+
+.swiper-content__title {
+  margin: 0 0 24px 0;
+  color: var(--white-color);
+  font-weight: 800;
+  font-size: 70px;
+  line-height: 85px;
+}
+
+
+.swiper-content__paragraph {
+  margin: 0 0 90px 0;
+  color: var(--white-color);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+
+.swiper-content__button {
+  display: inline-block;
+  background-color: var(--color-orange);
+  padding: 24.83px 36.88px;
+  color: var(--white-color);
+  font-weight: 700;
+  font-size: 23.4581px;
+  line-height: 29px;
+}
+
+
+/*--About-Us----------------*/
+
+.about {
+  margin-bottom: 100px;
+}
+
+.about__title {
+  margin: 0 0 20px 0;
+}
+
+.about--paragraph{
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+.about__paragraph {
+  color: var(--color-text-heading);
+  max-width: 1235px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+}
+
+.about-serve {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-serve__left {
+  max-width: 49%;
+  margin: 0 32px 0 0;
+}
+
+.about-serve__figure {
+  display: inline-block;
+  position: relative;
+}
+
+.figure-img {
+  display: block;
+}
+
+.about-serve-figure__caption {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--white-color);
+  width: 100%;
+}
+
+.figcaption-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  
+}
+
+.figcaption-block__paragraph {
+  max-width: 454px;
+  margin: 0 auto 0 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 32px;
+}
+
+.figcaption-block__button {
+  display: inline-block;
+  color: var(--white-color);
+  border: 3px solid var(--color-orange);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 18px 35px;
+}
+
+.about-serve__right {
+  max-width: 49%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-serve-card {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  border: 1px solid #CACACA;
+  padding: 65px 113px 65px 60px;
+}
+
+.about-serve-card:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.about-serve-card__img {
+  margin-right: 50px;
+}
+
+.about-serve-card__text {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 452px;
+}
+
+.serve-card__title {
+  color: var(--color-text-heading);
+  font-size: 24px;
+  line-height: 29px;
+  margin: 0 0 8px 0;
+}
+
+.serve-card__paragraph {
+  font-size: 16px;
+  line-height: 32px;
+  margin: 0;
+}
