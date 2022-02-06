@@ -45,9 +45,7 @@
 
 
 
-* {
 
-}
 
 :root {
   --white-color: #FFFFFF;
@@ -57,11 +55,6 @@
   --footer-color: #CACACA;
   --footer-bg-input: #414141;
   --btn-active: #E1670E;  
-}
-
-:focus {
-  outline: 2px solid var(--color-orange);
-  outline-offset: 4px;
 }
 
 html {
@@ -190,23 +183,47 @@ img {
 .hero {
   margin-bottom: 100px;
 }
-.swiper {
+.hero-conteiner {
   height: 620px;
 }
-.swiper--first {
+
+
+.hero-content {
+  max-width: 890px;
+  padding: 100px 0px 0px 80px;
+  margin-bottom: 50px;
+  position: absolute;
+  z-index: 3;
+}
+
+.swiper {
+  position: relative;
   height: 100%;
+}
+
+.swiper--first {
   background-image: url(../img/low-angle-photo-of-balconies-24620151.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.swiper-content {
-  max-width: 890px;
-  padding: 100px 0px 0px 80px;
-  margin-bottom: 50px;
+.swiper--two {
+  background-image: url(../img/brown-and-blue-glass-building-2093076-2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.swiper-content__title {
+.swiper--three {
+  background-image: url(../img/pic_2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.swiper-pagination {
+  z-index: 4;
+}
+
+.hero-content__title {
   margin: 0 0 24px 0;
   color: var(--white-color);
   font-weight: 800;
@@ -215,7 +232,7 @@ img {
 }
 
 
-.swiper-content__paragraph {
+.hero-content__paragraph {
   margin: 0 0 90px 0;
   color: var(--white-color);
   font-weight: 700;
@@ -224,7 +241,7 @@ img {
 }
 
 
-.swiper-content__button {
+.hero-content__button {
   display: inline-block;
   background-color: var(--color-orange);
   padding: 24.83px 36.88px;
@@ -235,43 +252,30 @@ img {
   transition: background-color 0.5s linear;
 }
 
-.swiper-content__button:focus,
-.swiper-content__button:hover {
+.hero-content__button:focus,
+.hero-content__button:hover {
   background-color: rgba(255, 153, 0, 0.7);
 }
 
-.swiper-content__button:active {
+.hero-content__button:active {
   transition-duration: 0s;
   background-color: var(--btn-active);
 }
 
-.swiper-control {
-  width: 100%;
-  text-align: center;
-}
-
-.swiper-control-btn-padding {
-  display: inline-block;
-  padding: 5px;
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-}
-
-.swiper-control-btn-padding:nth-child(n+1) {
-  margin-right: 10px;
-}
-
-.swiper-control-btn-padding:last-child {
-  margin-right: 0;
-}
-
-.swiper-control-btn {
-  display: inline-block;
+.swiper-pagination-bullet {
   width: 15px;
   height: 15px;
   background-color: var(--white-color);
   border-radius: 50%;
+  margin: 0;
+}
+
+.swiper-pagination-bullet:nth-child(n+1) {
+  margin-right: 10px;
+}
+
+.swiper-pagination-bullet:last-child {
+  margin-right: 0;
 }
 
 /*--About-Us----------------*/
@@ -430,6 +434,9 @@ img {
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
+  border: none;
+  background: none;
+  padding: 0;
 }
 
 .working-steps-item__link:hover {
@@ -439,6 +446,14 @@ img {
 .working-steps-item__link:active {
   color: var(--btn-active);
   outline: none;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content-active {
+  display: block;
 }
 
 .working-swiper {
@@ -536,15 +551,41 @@ img {
 
 .question-list__item {
   border-top: 1px solid #CACACA;
-  padding: 31px 0;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  align-items: center;
 }
 
 .question-list__item:last-child {
   border-bottom: 1px solid #CACACA;
+}
+
+.question-list-item__title {
+  position: relative;
+  padding: 31px 0px;
+  cursor: pointer;
+}
+
+.ui-accordion-header-icon {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  background-image: url(/img/+х.svg);
+  width: 50px;
+  height: 50px;
+  right: 0;
+  top: 22px;
+  transition: transform .4s ease-in-out;
+}
+
+.ui-accordion-header-active > .ui-accordion-header-icon {
+  transform: rotate(45deg);
+}
+
+.ui-accordion-content {
+  padding-bottom: 30px;
+}
+
+.question-list__paragraph {
+  margin: 0;
+  padding-right: 50px;
 }
 
 .question-list-item__title {
@@ -783,6 +824,59 @@ img {
   color: var(--footer-color);
 }
 
+/*--mobile-nav---------*/
+
+.mobile-nav {
+  position: absolute;
+  left: -100vw;
+  transition: left .3s ease-in-out;
+  z-index: 100;
+  width: 30%;
+  height: 100%;
+}
+
+.mobile-nav-list {
+  background-color: var(--footer-bg);
+  height: 100%;
+}
+.mobile-nav-list-item {
+  padding: 15px 25px;
+}
+
+.mobile-nav-list-item:first-child {
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+
+.burger-active{
+  padding: 10px;
+  position: relative;
+  left: -10px;
+  top: 1px;
+}
+.mobile-nav-list-item__link {
+  color: var(--footer-color);
+  padding: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 50%;
+}
+
+.mobile-nav-list-item__link:hover {
+  color: var(--color-orange);
+}
+
+.mobile-nav-list-item__link:focus {
+  border: 2px solid var(--color-orange);
+}
+
+.mobile-nav-list-item__link:active {
+  color: #E1670E;
+  border: none;
+}
+
+/*--Adaptation---------*/
+
 @media (max-width: 1470px) {
   .serve-card__paragraph{
     line-height: 26px;
@@ -830,6 +924,10 @@ img {
   .header-nav {
     display: none;
   }
+  .mobile-nav-active {
+    left: 0;
+  }
+
   .header-burger {
     display: block;
     margin-right: auto;
@@ -842,23 +940,24 @@ img {
   .hero {
     margin-bottom: 80px;
   }
-  .swiper {
+  .hero-conteiner {
     height: 668px;
   }
   .swiper--first {
     background-image: url(../img/low-angle-photo-of-balconies-2462015_1.jpg);
   }
-  .swiper-content {
+
+  .hero-content {
     max-width: 770px;
     padding: 160px 0 0 77px;
     margin-bottom: 115px;
   }
-  .swiper-content__title {
+  .hero-content__title {
     font-size: 60px;
     line-height: 69px;
     margin-bottom: 24px;
   }
-  .swiper-content__paragraph {
+  .hero-content__paragraph {
     font-size: 20px;
     line-height: 24px;
     margin-bottom: 60px;
@@ -929,6 +1028,7 @@ img {
   }
   .question-list-item__title{
     font-size: 20px;
+    padding-right: 50px;
   }
   .footer__conteiner{
     padding: 50px 10px 50px 10px;
@@ -963,26 +1063,35 @@ img {
     width: 150px;
     height: 48px;
   }
+
+  .mobile-nav {
+    width: 50%;
+  }
+
+  .mobile-nav-active {
+    left: 0;
+  }
+
   .hero {
     margin-bottom: 80px;
   }
-  .swiper {
+  .hero-conteiner {
     height: 662px;
   }
   .swiper--first {
     background-image: url(../img/low-angle-photo-of-balconies-2462015_1.jpg);
   }
-  .swiper-content {
+  .hero-content {
     max-width: 688px;
     padding: 160px 0 0 40px;
     margin-bottom: 115px;
   }
-  .swiper-content__title {
+  .hero-content__title {
     font-size: 50px;
     line-height: 61px;
     margin-bottom: 16px;
   }
-  .swiper-content__paragraph {
+  .hero-content__paragraph {
     max-width: 588px;
     font-size: 18px;
     line-height: 22px;
@@ -1073,9 +1182,10 @@ img {
   .question-list__item {
     padding: 30px 0;
   }
-  .question-list-item__title{
+  .question-list-item__title {
     font-size: 20px;
     max-width: 570px;
+    padding-right: 55px;
   }
   .footer__conteiner{
     padding: 50px 10px 50px 10px;
@@ -1131,35 +1241,41 @@ img {
     width: 110px;
     height: 35px;
   }
+  .mobile-nav{
+    width: 60%;
+  }
+  .mobile-nav-active {
+    left: 0;
+  }
   .hero {
     margin-bottom: 60px;
   }
-  .swiper {
+  .hero-conteiner {
     height: 308px;
   }
   .swiper--first {
     background-image: url(../img/low-angle-photo-of-balconies-2462015_1.jpg);
   }
-  .swiper-content {
+  .hero-content {
     max-width: 247px;
     padding: 60px 0 0 22px;
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
   }
-  .swiper-content__title {
+  .hero-content__title {
     font-size: 20px;
     line-height: 24px;
     margin-bottom: 6px;
     text-align: center;
   }
-  .swiper-content__paragraph {
+  .hero-content__paragraph {
     font-size: 12px;
     line-height: 15px;
     margin-bottom: 34px;
     text-align: center;
   }
-  .swiper-content__button {
+  .hero-content__button {
     font-size: 12px;
     line-height: 15px;
     padding: 12.5px 29px;
@@ -1327,13 +1443,23 @@ img {
     margin-bottom: 16px;
   }
   .question-list__item {
-    padding: 30px 0;
+    padding: 0;
   }
   .question-list-item__title{
     font-weight: 500;
     font-size: 14px;
     line-height: 24px;
+    padding-right: 35px;
   }
+
+  .ui-accordion-header-icon{
+    background-image: url(/img/+х320.svg);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    top: 39px;
+  }
+
   .question-list-item__button{
     width: 30px;
     height: 30px;
