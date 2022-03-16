@@ -154,6 +154,26 @@
 						<div class="about-serve-card__text">
 							<h4 class="serve-card__title">Консультация с широким активом</h4>
 							<p class="serve-card__paragraph about__paragraph">А также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для как самодостаточных, так и внешне зависимых концептуальных решений.</p>
+							<div class="tooltip">
+								<div class="tooltip__marker">
+									<svg height="30px" style="enable-background:new 0 0 128 130;" version="1.1" viewBox="0 0 128 130" width="28px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+										<style type="text/css">
+										<![CDATA[
+											.st0{fill:#EF3E42;}
+											.st1{fill:#FFFFFF;}
+											.st2{fill:none;}
+											.st3{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+										]]>
+										</style>
+										<defs/>
+										<path d="M9.5,65.4c0-29.6,24.1-53.6,53.6-53.6c29.6,0,53.6,24,53.6,53.6c0,29.6-23.9,53.6-53.6,53.6C33.6,119,9.5,95,9.5,65.4  L9.5,65.4L9.5,65.4z M47.3,56.1v7.8H54v29.6h-6.7v7.8h31.5v-7.8h-6.6V63.9h6.6v-7.8H47.3L47.3,56.1L47.3,56.1z M51.9,40.9  c0,6.2,5.1,11.3,11.3,11.3c6.2,0,11.3-5,11.3-11.3c0-6.2-5.1-11.3-11.3-11.3C56.9,29.6,51.9,34.7,51.9,40.9L51.9,40.9L51.9,40.9z"/>
+										<rect class="st2" height="130" id="_x3C_Slice_x3E__100_" width="128"/>
+									</svg>
+								</div>
+								<div class="tooltip__popup">
+									<span>Тут какой то текст.</span>
+								</div>
+							</div>
 						</div>
 					</article>
 					<article class="about-serve-card">
@@ -328,12 +348,12 @@
 				<form action="https://jsonplaceholder.typicode.com/posts" method="post" class="form">
 					<fieldset class="form-fieldset">
 						<legend class="form-title">Оставить заявку</legend>
-						<input type="text" class="form-input" required placeholder="Фамилия, имя и отчество*">
-						<input type="email" class="form-input" required placeholder="E-mail*">
-						<textarea class="form-textarea" placeholder="Сообщение"></textarea>
+						<input type="text" name="user_name" class="form-input" required placeholder="Фамилия, имя и отчество*">
+						<input type="email" name="user_email" class="form-input" required placeholder="E-mail*">
+						<textarea class="form-textarea" name="user_message" placeholder="Сообщение"></textarea>
 						<div class="form-conteiner">
 							<label class="form-conteiner-checkbox-text" for="check">
-								<input type="checkbox" id="check" class="form-conteiner-checkbox" required>
+								<input type="checkbox" name="user_check" id="check" class="form-conteiner-checkbox" required>
 								<span class="checkbox-span">Согласен на обработку данных</span>
 							</label>
 							<button class="footer-form-btn">Отправить данные</button>
@@ -344,6 +364,33 @@
 			<div class="footer__right">
 				<p class="footer-paragraph">Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: разбавленное изрядной долей эмпатии, рациональное мышление позволяет оценить значение модели развития. Таким образом, консультация с широким активом обеспечивает широкому кругу (специалистов) участие в формировании стандартных подходов.</p>
 			</div>
+			<script src="https://api-maps.yandex.ru/2.1/?apikey=534ac83e-c787-43c6-800c-a483b037a751&lang=ru_RU" type="text/javascript">
+			</script>
+			<div id="map" class="map" style="width: 100%; height: 400px"></div>
+			<script type="text/javascript">
+				// Функция ymaps.ready() будет вызвана, когда
+				// загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+				ymaps.ready(init);
+				function init(){
+					// Создание карты.
+					var myMap = new ymaps.Map("map", {
+						// Координаты центра карты.
+						// Порядок по умолчанию: «широта, долгота».
+						// Чтобы не определять координаты центра карты вручную,
+						// воспользуйтесь инструментом Определение координат.
+						center: [55.754635540101084,37.853583108968586],
+						// Уровень масштабирования. Допустимые значения:
+						// от 0 (весь мир) до 19.
+						zoom: 15},
+					);
+					var myPlacemark = new ymaps.Placemark([55.754635540101084,37.853583108968586], {}, {
+						preset: 'islands#redIcon'
+					});
+
+					// Размещение геообъекта на карте.
+					myMap.geoObjects.add(myPlacemark);
+				}
+			</script>
 		</div>
 	</footer>
 
